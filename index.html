@@ -6,7 +6,6 @@
 <title>Thatikonda Vineethya | Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
@@ -16,12 +15,10 @@ body{
   scroll-behavior:smooth;
 }
 
-/* Better section spacing */
 section{
   scroll-margin-top:100px;
 }
 
-/* Nav underline */
 .nav-link{
   position:relative;
 }
@@ -39,7 +36,6 @@ section{
   width:100%;
 }
 
-/* Reveal animation */
 .reveal{
   opacity:0;
   transform:translateY(40px);
@@ -50,7 +46,6 @@ section{
   transform:translateY(0);
 }
 
-/* Card hover */
 .card{
   transition:.3s ease;
 }
@@ -59,30 +54,39 @@ section{
   box-shadow:0 16px 35px rgba(16,185,129,.18);
 }
 
-/* Responsive Project Cards */
+/* Responsive project cards */
 .project-card{
-  min-width:85%;
+  flex: 0 0 90%;
 }
-@media(min-width:768px){
+@media (min-width:640px){
   .project-card{
-    min-width:500px;
+    flex: 0 0 75%;
+  }
+}
+@media (min-width:1024px){
+  .project-card{
+    flex: 0 0 500px;
   }
 }
 
-/* Responsive Certification Cards */
+/* Responsive certification cards */
 .cert-card{
-  min-width:85%;
+  flex: 0 0 90%;
   background:rgba(0,0,0,.45);
   border:1px solid rgba(16,185,129,.3);
   border-radius:14px;
   padding:18px;
-  flex-shrink:0;
   cursor:pointer;
   transition:.3s ease;
 }
-@media(min-width:768px){
+@media (min-width:640px){
   .cert-card{
-    min-width:420px;
+    flex: 0 0 70%;
+  }
+}
+@media (min-width:1024px){
+  .cert-card{
+    flex: 0 0 420px;
   }
 }
 .cert-card img{
@@ -98,7 +102,6 @@ section{
   box-shadow:0 16px 35px rgba(16,185,129,.25);
 }
 
-/* Hide scrollbar */
 .scrollbar-hide::-webkit-scrollbar{display:none;}
 .scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none;}
 </style>
@@ -108,14 +111,14 @@ section{
 
 <!-- NAVBAR -->
 <nav class="sticky top-0 bg-black/60 backdrop-blur-xl border-b border-green-900/40 z-50">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center relative">
 
 <h1 class="text-emerald-400 font-semibold tracking-wide text-lg">
 Thatikonda Vineethya
 </h1>
 
+<!-- Desktop Nav -->
 <div class="hidden md:flex items-center space-x-6 text-sm">
-
 <a href="#about" class="nav-link hover:text-emerald-400">About</a>
 <a href="#profile" class="nav-link hover:text-emerald-400">Profile</a>
 <a href="#projects" class="nav-link hover:text-emerald-400">Projects</a>
@@ -138,21 +141,37 @@ target="_blank"
 class="bg-emerald-500 hover:bg-emerald-600 text-black px-4 py-1.5 rounded-md font-semibold transition">
 Resume
 </a>
+</div>
 
+<!-- Mobile Menu Button -->
+<button id="menuBtn" class="md:hidden text-emerald-400 text-xl">
+<i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile Dropdown -->
+<div id="mobileMenu" class="hidden flex-col absolute top-full left-0 w-full bg-black/95 p-6 space-y-4 md:hidden">
+<a href="#about">About</a>
+<a href="#profile">Profile</a>
+<a href="#projects">Projects</a>
+<a href="#certifications">Certifications</a>
+<a href="mailto:vinithyathatikonda@gmail.com">Email</a>
+<a href="https://github.com/Rvsvinithya" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/vinithya-thatikonda" target="_blank">LinkedIn</a>
+<a href="Vineethya Resume 2026-1.pdf" target="_blank">Resume</a>
 </div>
 
 </div>
 </nav>
 
 <!-- HERO -->
-<section id="about" class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-14 reveal">
+<section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-14 reveal">
 
 <div class="md:w-1/2">
-<h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
 Associate Implementation Engineer
 </h2>
 
-<p class="text-gray-400 leading-relaxed text-lg">
+<p class="text-gray-400 leading-relaxed text-base sm:text-lg">
 IT graduate with expertise in Java, SQL, Python and Groovy scripting.
 Currently working at <span class="text-emerald-400 font-semibold">e2open</span>
 delivering enterprise workflow configurations and scalable solutions.
@@ -160,7 +179,7 @@ delivering enterprise workflow configurations and scalable solutions.
 </div>
 
 <div class="md:w-1/2 flex justify-center">
-<div class="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-emerald-500/30 shadow-2xl">
+<div class="w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-emerald-500/30 shadow-2xl">
 <img src="Vineethya.jpeg" class="w-full h-full object-cover">
 </div>
 </div>
@@ -168,19 +187,19 @@ delivering enterprise workflow configurations and scalable solutions.
 </section>
 
 <!-- PROFILE -->
-<section id="profile" class="max-w-7xl mx-auto px-6 py-24 reveal">
+<section id="profile" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 reveal">
 
-<h2 class="text-3xl text-center text-emerald-400 font-semibold mb-14">
+<h2 class="text-2xl sm:text-3xl text-center text-emerald-400 font-semibold mb-12">
 Professional Profile
 </h2>
 
-<div class="bg-black/40 border border-green-900/40 rounded-xl p-10 card">
+<div class="bg-black/40 border border-green-900/40 rounded-xl p-6 sm:p-10 card">
 
-<div class="grid md:grid-cols-2 gap-14">
+<div class="grid md:grid-cols-2 gap-10 md:gap-14">
 
 <div>
 <h3 class="text-xl font-semibold text-white mb-6">Technical Skills</h3>
-<ul class="space-y-3 text-gray-400">
+<ul class="space-y-3 text-gray-400 text-sm sm:text-base">
 <li><span class="text-emerald-400">Languages:</span> Java, Python, Groovy, C</li>
 <li><span class="text-emerald-400">Web:</span> HTML, CSS, Javascript</li>
 <li><span class="text-emerald-400">Databases:</span> MySQL, MongoDB</li>
@@ -193,7 +212,7 @@ Professional Profile
 Associate Implementation Engineer – e2open
 </h3>
 <p class="text-gray-500 mb-6">July 2025 – Present</p>
-<ul class="space-y-3 text-gray-400">
+<ul class="space-y-3 text-gray-400 text-sm sm:text-base">
 <li>• Customized SCPM modules aligned with enterprise workflows.</li>
 <li>• Implemented business logic and validations using Java.</li>
 <li>• SQL-based transactional data validation.</li>
@@ -207,26 +226,26 @@ Associate Implementation Engineer – e2open
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="max-w-7xl mx-auto px-6 py-24 reveal">
+<section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 reveal">
 
-<h2 class="text-3xl text-center text-emerald-400 font-semibold mb-14">
+<h2 class="text-2xl sm:text-3xl text-center text-emerald-400 font-semibold mb-12">
 Projects
 </h2>
 
 <div class="relative">
 
 <button id="projPrev"
-class="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
+class="absolute left-2 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
 <i class="fas fa-chevron-left text-white"></i>
 </button>
 
 <button id="projNext"
-class="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
+class="absolute right-2 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
 <i class="fas fa-chevron-right text-white"></i>
 </button>
 
 <div id="projectContainer"
-class="flex space-x-10 overflow-x-auto scroll-smooth px-12 scrollbar-hide">
+class="flex space-x-6 overflow-x-auto scroll-smooth px-10 scrollbar-hide">
 
 <div class="project-card bg-black/40 border border-green-900/40 rounded-xl p-6 card">
 <h3 class="text-xl font-semibold text-white mb-3">Open Care</h3>
@@ -277,26 +296,26 @@ class="text-emerald-400 hover:underline">
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" class="max-w-7xl mx-auto px-6 py-24 reveal">
+<section id="certifications" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 reveal">
 
-<h2 class="text-3xl text-center text-emerald-400 font-semibold mb-14">
+<h2 class="text-2xl sm:text-3xl text-center text-emerald-400 font-semibold mb-12">
 Certifications
 </h2>
 
 <div class="relative">
 
 <button id="prevBtn"
-class="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
+class="absolute left-2 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
 <i class="fas fa-chevron-left text-white"></i>
 </button>
 
 <button id="nextBtn"
-class="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
+class="absolute right-2 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500/40 p-3 rounded-full z-10">
 <i class="fas fa-chevron-right text-white"></i>
 </button>
 
 <div id="certContainer"
-class="flex space-x-8 overflow-x-auto scroll-smooth px-12 scrollbar-hide">
+class="flex space-x-6 overflow-x-auto scroll-smooth px-10 scrollbar-hide">
 
 <div class="cert-card" onclick="openPreview('1-EPy4EPzN0NMzDhKGuiYKayiUk8_e0rT')">
 <img src="https://drive.google.com/thumbnail?id=1-EPy4EPzN0NMzDhKGuiYKayiUk8_e0rT&sz=w1000">
@@ -335,13 +354,12 @@ class="flex space-x-8 overflow-x-auto scroll-smooth px-12 scrollbar-hide">
 <!-- MODAL -->
 <div id="previewModal"
 class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-<div class="relative w-11/12 md:w-3/4 h-5/6 bg-black rounded-xl overflow-hidden">
+<div class="relative w-11/12 sm:w-4/5 lg:w-3/4 h-[80vh] bg-black rounded-xl overflow-hidden">
 <button onclick="closePreview()"
 class="absolute top-4 right-4 text-white text-2xl">&times;</button>
 <iframe id="previewFrame" class="w-full h-full"></iframe>
 </div>
 </div>
-
 
 <script>
 const reveals=document.querySelectorAll('.reveal');
@@ -352,10 +370,18 @@ if(entry.isIntersecting){entry.target.classList.add('active');}
 },{threshold:0.15});
 reveals.forEach(section=>observer.observe(section));
 
-projNext.onclick=()=>projectContainer.scrollBy({left:520,behavior:"smooth"});
-projPrev.onclick=()=>projectContainer.scrollBy({left:-520,behavior:"smooth"});
-nextBtn.onclick=()=>certContainer.scrollBy({left:450,behavior:"smooth"});
-prevBtn.onclick=()=>certContainer.scrollBy({left:-450,behavior:"smooth"});
+function scrollContainer(container, direction){
+  const scrollAmount = container.clientWidth * 0.9;
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth"
+  });
+}
+
+projNext.onclick=()=>scrollContainer(projectContainer,1);
+projPrev.onclick=()=>scrollContainer(projectContainer,-1);
+nextBtn.onclick=()=>scrollContainer(certContainer,1);
+prevBtn.onclick=()=>scrollContainer(certContainer,-1);
 
 function openPreview(fileId){
 previewModal.classList.remove("hidden");
@@ -365,6 +391,10 @@ previewFrame.src=`https://drive.google.com/file/d/${fileId}/preview`;
 function closePreview(){
 previewModal.classList.add("hidden");
 previewFrame.src="";
+}
+
+menuBtn.onclick=()=>{
+mobileMenu.classList.toggle("hidden");
 }
 </script>
 
