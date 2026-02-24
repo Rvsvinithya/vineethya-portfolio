@@ -1,0 +1,10 @@
+# Ignore resume files
+*.pdf
+
+# Ignore image files
+*.jpeg
+*.jpg
+
+# Optional: OS junk
+.DS_Store
+Thumbs.db
